@@ -109,7 +109,7 @@ For example, from the following data bag item:
     "key": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCctNyRouVDhzjiP[...]",
     "user": "root"
   },
-  "alice@acme.com":
+  "alice@acme.com": {
     "key": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCySLKbpFRGCrKU/[...]",
     "user": "alice"
   }
