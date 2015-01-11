@@ -3,7 +3,6 @@
 [![Build Status](https://img.shields.io/travis/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://travis-ci.org/onddo/ssh_authorized_keys-cookbook)
 [![Coverage Status](https://img.shields.io/coveralls/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://coveralls.io/r/onddo/ssh_authorized_keys-cookbook?branch=master)
 [![Inline docs](https://inch-ci.org/github/onddo/ssh_authorized_keys-cookbook.svg?branch=master&style=flat)](https://inch-ci.org/github/onddo/ssh_authorized_keys-cookbook)
-
 Description
 ===========
 
