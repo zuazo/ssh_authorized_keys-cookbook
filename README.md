@@ -1,7 +1,7 @@
 [![Cookbook Version](https://img.shields.io/cookbook/v/ssh_authorized_keys.svg?style=flat)](https://supermarket.getchef.com/cookbooks/ssh_authorized_keys)
 [![Code Climate](https://img.shields.io/codeclimate/github/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://codeclimate.com/github/onddo/ssh_authorized_keys-cookbook)
-[![Build Status](https://img.shields.io/travis/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://travis-ci.org/onddo/ssh_authorized_keys-cookbook)
-[![Coverage Status](https://img.shields.io/coveralls/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://coveralls.io/r/onddo/ssh_authorized_keys-cookbook?branch=master)
+[![Build Status](https://img.shields.io/travis/onddo/ssh_authorized_keys-cookbook/0.1.0.svg?style=flat)](https://travis-ci.org/onddo/ssh_authorized_keys-cookbook)
+[![Coverage Status](https://img.shields.io/coveralls/onddo/ssh_authorized_keys-cookbook/0.1.0.svg?style=flat)](https://coveralls.io/r/onddo/ssh_authorized_keys-cookbook?branch=0.1.0)
 [![Inline docs](https://inch-ci.org/github/onddo/ssh_authorized_keys-cookbook.svg?branch=master&style=flat)](https://inch-ci.org/github/onddo/ssh_authorized_keys-cookbook)
 Description
 ===========
