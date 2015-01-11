@@ -3,7 +3,7 @@
 # vi: set ft=ruby :
 
 source 'https://supermarket.getchef.com'
-my_cookbook = ::File.basename(Dir.pwd)
+my_cookbook = ::File.basename(Dir.pwd).sub(/[-_]?cookbook$/, '')
 
 # Berkshelf helper to include a local cookbook from disk.
 #
