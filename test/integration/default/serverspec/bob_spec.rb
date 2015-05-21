@@ -49,3 +49,18 @@ describe file('/home/bob/.ssh/authorized_keys') do
   it { should be_mode 600 }
   its(:content) { should eq content }
 end
+
+describe file('/home/bob2/.ssh') do
+  it { should be_directory }
+  it { should be_owned_by 'bob2' }
+  it { should be_grouped_into 'bob2' }
+  it { should be_mode 700 }
+end
+
+describe file('/home/bob2/.ssh/authorized_keys') do
+  it { should be_file }
+  it { should be_owned_by 'bob2' }
+  it { should be_grouped_into 'bob2' }
+  it { should be_mode 600 }
+  its(:content) { should eq content }
+end

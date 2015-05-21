@@ -72,6 +72,15 @@ group 'bob' do
   members %w(bob)
 end
 
+user 'bob2' do
+  supports manage_home: true
+  home '/home/bob2'
+end
+
+group 'bob2' do
+  members %w(bob2)
+end
+
 user 'alice' do
   supports manage_home: true
   home '/home/alice'
@@ -91,6 +100,20 @@ ssh_authorize_key 'bob@home.com' do
   key key2
   comment 'bob@home.com comment'
   user 'bob'
+end
+
+# bob2: Same as bob but keys in reverse order
+
+ssh_authorize_key 'bob@home.com' do
+  key key2
+  comment 'bob@home.com comment'
+  user 'bob2'
+end
+
+ssh_authorize_key 'bob@acme.com' do
+  keytype 'ssh-rsa'
+  key key1
+  user 'bob2'
 end
 
 ssh_authorize_key 'alice@acme.com' do

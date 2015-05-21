@@ -34,6 +34,17 @@ describe 'ssh_authorized_keys_test::default', order: :random do
       .with_members(%w(bob))
   end
 
+  it 'creates bob2 user' do
+    expect(chef_run).to create_user('bob2')
+      .with_supports(manage_home: true)
+      .with_home('/home/bob2')
+  end
+
+  it 'creates bob2 group' do
+    expect(chef_run).to create_group('bob2')
+      .with_members(%w(bob2))
+  end
+
   it 'creates alice user' do
     expect(chef_run).to create_user('alice')
       .with_supports(manage_home: true)
@@ -69,6 +80,39 @@ describe 'ssh_authorized_keys_test::default', order: :random do
   it 'authorizes bob@home.com to login as bob' do
     expect(chef_run).to render_file('/home/bob/.ssh/authorized_keys')
       .with_content(/^ssh-rsa [A-Za-z0-9+\/=]+ bob@home\.com comment$/)
+  end
+
+  it 'creates ~bob2/.ssh directory' do
+    expect(chef_run).to create_directory('/home/bob2/.ssh')
+      .with_owner('bob2')
+      .with_group('bob2')
+      .with_mode('00700')
+  end
+
+  it 'creates ~bob/.ssh2/authorized_keys file' do
+    expect(chef_run).to create_template('/home/bob2/.ssh/authorized_keys')
+      .with_cookbook('ssh_authorized_keys')
+      .with_source('authorized_keys.erb')
+      .with_owner('bob2')
+      .with_group('bob2')
+      .with_mode('00600')
+  end
+
+  it 'authorizes bob@acme.com to login as bob2' do
+    expect(chef_run).to render_file('/home/bob2/.ssh/authorized_keys')
+      .with_content(/^ssh-rsa [A-Za-z0-9+\/=]+ bob@acme\.com$/)
+  end
+
+  it 'authorizes bob@home.com to login as bob2' do
+    expect(chef_run).to render_file('/home/bob2/.ssh/authorized_keys')
+      .with_content(/^ssh-rsa [A-Za-z0-9+\/=]+ bob@home\.com comment$/)
+  end
+
+  it 'writes bob2 keys in the same order as bob keys' do
+    file1 = chef_run.template('/home/bob/.ssh/authorized_keys')
+    content1 = ChefSpec::Renderer.new(chef_run, file1).content
+    expect(chef_run).to render_file('/home/bob2/.ssh/authorized_keys')
+      .with_content(content1)
   end
 
   it 'creates ~alice/.ssh directory' do

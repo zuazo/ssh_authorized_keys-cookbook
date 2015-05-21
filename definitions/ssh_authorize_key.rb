@@ -67,6 +67,9 @@ define :ssh_authorize_key do
   t.group(group)
   t.mode('00600')
   t.variables[:keys][ssh_key[:comment]] = ssh_key
+  # Sort file content by comment field: Calling the same ssh_authorized_keys in
+  # different order produces the same result.
+  t.variables[:keys] = Hash[t.variables[:keys].sort]
 
   # For notifications support (only works in Chef 12).
   # @example
