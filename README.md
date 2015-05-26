@@ -22,8 +22,9 @@ This cookbook has been tested on the following platforms:
 * CentOS
 * Fedora
 * FreeBSD
+* openSUSE
 * RedHat
-* Suse
+* SUSE
 * Ubuntu
 
 Please, [let us know](https://github.com/onddo/ssh_authorized_keys-cookbook/issues/new?title=I%20have%20used%20it%20successfully%20on%20...) if you use it successfully on any other platform.
