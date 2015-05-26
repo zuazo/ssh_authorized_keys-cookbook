@@ -56,7 +56,7 @@ First of all, don't forget to include the `ssh_authorized_keys` cookbook as a de
 
 ```ruby
 # metadata.rb
-[...]
+# [...]
 
 depends 'ssh_authorized_keys'
 ```
