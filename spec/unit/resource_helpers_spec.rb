@@ -150,4 +150,34 @@ describe SshAuthorizedKeysCookbook::ResourceHelpers, order: :random do
       end
     end
   end
+
+  context '#user_group' do
+    let(:user) do
+      require 'etc'
+      Etc::Passwd.new('bob', 'x', 1000, 1000, 'bob,,,')
+    end
+
+    it 'returns system user group' do
+      expect(Etc).to receive(:getpwnam).with('bob').and_return(user)
+      expect(helpers.user_group('bob')).to eq(1000)
+    end
+
+    context 'when user does not exist' do
+      before do
+        expect(Etc).to receive(:getpwnam).with('bob')
+          .and_raise(ArgumentError.new)
+        allow(Chef::Log).to receive(:warn)
+      end
+
+      it 'prints a Chef warning' do
+        expect(Chef::Log).to receive(:warn)
+          .with(/^ssh_authorize_key: User .* not found at compile time/).once
+        helpers.user_group('bob')
+      end
+
+      it 'returns ${user}' do
+        expect(helpers.user_group('bob')).to eq('bob')
+      end
+    end
+  end
 end

@@ -23,8 +23,8 @@ define :ssh_authorize_key do
   self.class.send(:include, ::SshAuthorizedKeysCookbook::ResourceHelpers)
 
   user = params[:user]
-  group = params[:group] || Etc.getpwnam(user).gid
   assert_user(user)
+  group = params[:group] || user_group(user)
   home = params[:home] || user_home(user)
 
   ssh_key = {
