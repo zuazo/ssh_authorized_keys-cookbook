@@ -56,8 +56,9 @@ describe 'ssh_authorized_keys_test::default', order: :random do
       .with_members(%w(alice))
   end
 
-  it 'creates ~bob/.ssh directory' do
+  it 'creates ~bob/.ssh directory recursively' do
     expect(chef_run).to create_directory('/home/bob/.ssh')
+      .with_recursive(true)
       .with_owner('bob')
       .with_group('bob')
       .with_mode('00700')
@@ -82,14 +83,15 @@ describe 'ssh_authorized_keys_test::default', order: :random do
       .with_content(/^ssh-rsa [A-Za-z0-9+\/=]+ bob@home\.com comment$/)
   end
 
-  it 'creates ~bob2/.ssh directory' do
+  it 'creates ~bob2/.ssh directory recursively' do
     expect(chef_run).to create_directory('/home/bob2/.ssh')
+      .with_recursive(true)
       .with_owner('bob2')
       .with_group('bob2')
       .with_mode('00700')
   end
 
-  it 'creates ~bob/.ssh2/authorized_keys file' do
+  it 'creates ~bob2/.ssh/authorized_keys file' do
     expect(chef_run).to create_template('/home/bob2/.ssh/authorized_keys')
       .with_cookbook('ssh_authorized_keys')
       .with_source('authorized_keys.erb')
@@ -115,8 +117,9 @@ describe 'ssh_authorized_keys_test::default', order: :random do
       .with_content(content1)
   end
 
-  it 'creates ~alice/.ssh directory' do
+  it 'creates ~alice/.ssh directory recursively' do
     expect(chef_run).to create_directory('/home/alice/.ssh')
+      .with_recursive(true)
       .with_owner('alice')
       .with_group('alice')
       .with_mode('00700')
