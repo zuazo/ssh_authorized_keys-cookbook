@@ -19,6 +19,8 @@
 # limitations under the License.
 #
 
+require 'etc'
+
 # `ssh_authorized_keys` internal classes.
 module SshAuthorizedKeysCookbook
   # Some helpers to use from `ssh_authorized_keys` cookbook resources and
@@ -117,7 +119,6 @@ module SshAuthorizedKeysCookbook
     #   #you should specify a home path. I will use "/home/bob" for now.
     #   #=> "/home/bob"
     def user_home(user)
-      require 'etc'
       Etc.getpwnam(user).dir
     rescue ArgumentError
       home = ::File.join('', 'home', user)
@@ -126,6 +127,22 @@ module SshAuthorizedKeysCookbook
         "you should specify a home path. I will use #{home.inspect} for now."
       )
       home
+    end
+
+    # Returns the group of a system user.
+    #
+    # @param user [String] user name.
+    # @return [Integer] gid.
+    # @example
+    #   user_group('root') #=> 0
+    def user_group(user)
+      Etc.getpwnam(user).gid
+    rescue ArgumentError
+      Chef::Log.warn(
+        "ssh_authorize_key: User #{user} not found at compile time, perhaps "\
+        "you should specify a default group. I will use #{user} for now."
+      )
+      user
     end
   end
 end
