@@ -8,7 +8,7 @@ SSH Authorized Keys Cookbook
 [![Coverage Status](https://img.shields.io/coveralls/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://coveralls.io/r/zuazo/ssh_authorized_keys-cookbook?branch=master)
 [![Inline docs](https://inch-ci.org/github/zuazo/ssh_authorized_keys-cookbook.svg?branch=master&style=flat)](https://inch-ci.org/github/zuazo/ssh_authorized_keys-cookbook)
 
-Creates SSH authorized keys files in user home directories.
+[Chef](https://www.chef.io/) cookbook to create SSH authorized keys files in user home directories.
 
 Tries to avoid generating a corrupt file that could render your server inaccessible.
 
