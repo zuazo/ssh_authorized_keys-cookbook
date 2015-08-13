@@ -40,10 +40,10 @@ group :integration, :integration_cloud do
 end
 
 group :guard do
-  gem 'guard', '~> 2.6', '< 2.8'
-  gem 'guard-foodcritic', '~> 1.0'
+  gem 'guard', '~> 2.12'
+  gem 'guard-foodcritic', '~> 1.1'
   gem 'guard-rubocop', '~> 1.2'
-  gem 'guard-rspec', '~> 4.3', '< 4.5'
+  gem 'guard-rspec', '~> 4.6'
   # Temporary disabled: Error is: cannot load such file -- guard/kitchen
   # gem 'guard-kitchen', '~> 0.0.0'
 end
