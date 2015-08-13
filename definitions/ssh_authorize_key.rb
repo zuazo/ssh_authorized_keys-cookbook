@@ -23,8 +23,8 @@ define :ssh_authorize_key do
   self.class.send(:include, ::SshAuthorizedKeysCookbook::ResourceHelpers)
 
   user = params[:user]
-  group = params[:group] || user
   assert_user(user)
+  group = params[:group] || user_group(user)
   home = params[:home] || user_home(user)
 
   ssh_key = {
@@ -41,15 +41,17 @@ define :ssh_authorize_key do
 
   # Avoid CHEF-3694 warning for .ssh directory.
   dir = ::File.dirname(path)
-  d =
-    begin
-      resources(directory: dir)
-    rescue Chef::Exceptions::ResourceNotFound
-      directory dir
+
+  begin
+    resources(directory: dir)
+  rescue Chef::Exceptions::ResourceNotFound
+    directory dir do
+      recursive true
+      owner user
+      group group
+      mode '00700'
     end
-  d.owner(user)
-  d.group(group)
-  d.mode('00700')
+  end
 
   # Accumulator Pattern:
   # http://docs.chef.io/definitions.html#many-recipes-one-definition
