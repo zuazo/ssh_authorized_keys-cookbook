@@ -1,4 +1,4 @@
-[![Cookbook Version](https://img.shields.io/cookbook/v/ssh_authorized_keys.svg?style=flat)](https://supermarket.getchef.com/cookbooks/ssh_authorized_keys)
+[![Cookbook Version](https://img.shields.io/cookbook/v/ssh_authorized_keys.svg?style=flat)](https://supermarket.chef.io/cookbooks/ssh_authorized_keys)
 [![Code Climate](https://img.shields.io/codeclimate/github/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://codeclimate.com/github/onddo/ssh_authorized_keys-cookbook)
 [![Build Status](https://img.shields.io/travis/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://travis-ci.org/onddo/ssh_authorized_keys-cookbook)
 [![Coverage Status](https://img.shields.io/coveralls/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://coveralls.io/r/onddo/ssh_authorized_keys-cookbook?branch=master)
