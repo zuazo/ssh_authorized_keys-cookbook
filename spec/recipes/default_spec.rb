@@ -74,12 +74,12 @@ describe 'ssh_authorized_keys_test::default', order: :random do
 
   it 'authorizes bob@acme.com to login as bob' do
     expect(chef_run).to render_file('/home/bob/.ssh/authorized_keys')
-      .with_content(/^ssh-rsa [A-Za-z0-9+\/=]+ bob@acme\.com$/)
+      .with_content(%r{^ssh-rsa [A-Za-z0-9+/=]+ bob@acme\.com$})
   end
 
   it 'authorizes bob@home.com to login as bob' do
     expect(chef_run).to render_file('/home/bob/.ssh/authorized_keys')
-      .with_content(/^ssh-rsa [A-Za-z0-9+\/=]+ bob@home\.com comment$/)
+      .with_content(%r{^ssh-rsa [A-Za-z0-9+/=]+ bob@home\.com comment$})
   end
 
   it 'creates ~bob2/.ssh directory' do
@@ -100,12 +100,12 @@ describe 'ssh_authorized_keys_test::default', order: :random do
 
   it 'authorizes bob@acme.com to login as bob2' do
     expect(chef_run).to render_file('/home/bob2/.ssh/authorized_keys')
-      .with_content(/^ssh-rsa [A-Za-z0-9+\/=]+ bob@acme\.com$/)
+      .with_content(%r{^ssh-rsa [A-Za-z0-9+/=]+ bob@acme\.com$})
   end
 
   it 'authorizes bob@home.com to login as bob2' do
     expect(chef_run).to render_file('/home/bob2/.ssh/authorized_keys')
-      .with_content(/^ssh-rsa [A-Za-z0-9+\/=]+ bob@home\.com comment$/)
+      .with_content(%r{^ssh-rsa [A-Za-z0-9+/=]+ bob@home\.com comment$})
   end
 
   it 'writes bob2 keys in the same order as bob keys' do
@@ -138,7 +138,7 @@ describe 'ssh_authorized_keys_test::default', order: :random do
       '\"alice\".\';echo;sleep 10"'
     expect(chef_run).to render_file('/home/alice/.ssh/authorized_keys')
       .with_content(
-        /^#{Regexp.escape(options)} ssh-rsa [A-Za-z0-9+\/=]+ alice@acme\.com$/
+        %r{^#{Regexp.escape(options)} ssh-rsa [A-Za-z0-9+/=]+ alice@acme\.com$}
       )
   end
 

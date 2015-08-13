@@ -15,13 +15,13 @@ group :style,
         cli: '--exclude spec',
         cookbook_paths: '.',
         all_on_start: false do
-    watch(/attributes\/.+\.rb$/)
-    watch(/definitions\/.+\.rb$/)
-    watch(/libraries\/.+\.rb$/)
-    watch(/providers\/.+\.rb$/)
-    watch(/recipes\/.+\.rb$/)
-    watch(/resources\/.+\.rb$/)
-    watch(/templates\/.+\.erb$/)
+    watch(%r{attributes/.+\.rb$})
+    watch(%r{definitions/.+\.rb$})
+    watch(%r{libraries/.+\.rb$})
+    watch(%r{providers/.+\.rb$})
+    watch(%r{recipes/.+\.rb$})
+    watch(%r{resources/.+\.rb$})
+    watch(%r{templates/.+\.erb$})
     watch('metadata.rb')
   end
 
@@ -51,20 +51,16 @@ end # group style
 
 group :unit do
   guard :rspec,
-        cmd: 'bundle exec rspec',
+        cmd: 'bundle exec rake unit',
         all_on_start: false do
-    watch(/^libraries\/(.+)\.rb$/) do |m|
-      [
-        "spec/unit/#{m[1]}_spec.rb",
-        "spec/functional/#{m[1]}_spec.rb",
-        "spec/integration/#{m[1]}_spec.rb"
-      ]
+    watch(%r{^libraries/(.+)\.rb$}) do |m|
+      "spec/libraries/#{m[1]}_spec.rb"
     end
-    watch(/^recipes\/(.+)\.rb$/) { |m| "spec/recipes/#{m[1]}_spec.rb" }
-    watch(/^(?:providers|resources)\/(.+)\.rb$/) do |m|
+    watch(%r{^recipes/(.+)\.rb$}) { |m| "spec/recipes/#{m[1]}_spec.rb" }
+    watch(%r{^(?:providers|resources)/(.+)\.rb$}) do |m|
       "spec/resources/#{m[1]}_spec.rb"
     end
-    watch(/^spec\/.+_spec\.rb$/)
+    watch(%r{^spec/.+_spec\.rb$})
     watch('spec/spec_helper.rb') { 'spec' }
   end
 end # group unit
@@ -72,22 +68,24 @@ end # group unit
 # Integration Tests
 # =================
 # - test-kitchen
+#
+# Temporary disabled. See the Gemfile.
 
-group :integration do
-  guard 'kitchen',
-        all_on_start: false do
-    watch(/attributes\/.+\.rb$/)
-    watch(/definitions\/.+\.rb$/)
-    watch(/libraries\/.+\.rb$/)
-    watch(/providers\/.+\.rb$/)
-    watch(/recipes\/.+\.rb$/)
-    watch(/resources\/.+\.rb$/)
-    watch(/files\/.+/)
-    watch(/templates\/.+\.erb$/)
-    watch('metadata.rb')
-    watch(/test\/.+$/)
-    watch('Berksfile')
-  end
-end # group integration
+# group :integration do
+#   guard 'kitchen',
+#         all_on_start: false do
+#     watch(%r{attributes/.+\.rb$})
+#     watch(%r{definitions/.+\.rb$})
+#     watch(%r{libraries/.+\.rb$})
+#     watch(%r{providers/.+\.rb$})
+#     watch(%r{recipes/.+\.rb$})
+#     watch(%r{resources/.+\.rb$})
+#     watch(%r{files/.+})
+#     watch(%r{templates/.+\.erb$})
+#     watch('metadata.rb')
+#     watch(%r{test/.+$})
+#     watch('Berksfile')
+#   end
+# end # group integration
 
 scope groups: [:style, :unit]
