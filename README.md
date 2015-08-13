@@ -1,8 +1,8 @@
 [![Cookbook Version](https://img.shields.io/cookbook/v/ssh_authorized_keys.svg?style=flat)](https://supermarket.chef.io/cookbooks/ssh_authorized_keys)
-[![Code Climate](https://img.shields.io/codeclimate/github/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://codeclimate.com/github/onddo/ssh_authorized_keys-cookbook)
-[![Build Status](https://img.shields.io/travis/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://travis-ci.org/onddo/ssh_authorized_keys-cookbook)
-[![Coverage Status](https://img.shields.io/coveralls/onddo/ssh_authorized_keys-cookbook.svg?style=flat)](https://coveralls.io/r/onddo/ssh_authorized_keys-cookbook?branch=master)
-[![Inline docs](https://inch-ci.org/github/onddo/ssh_authorized_keys-cookbook.svg?branch=master&style=flat)](https://inch-ci.org/github/onddo/ssh_authorized_keys-cookbook)
+[![Code Climate](https://img.shields.io/codeclimate/github/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://codeclimate.com/github/zuazo/ssh_authorized_keys-cookbook)
+[![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
+[![Coverage Status](https://img.shields.io/coveralls/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://coveralls.io/r/zuazo/ssh_authorized_keys-cookbook?branch=master)
+[![Inline docs](https://inch-ci.org/github/zuazo/ssh_authorized_keys-cookbook.svg?branch=master&style=flat)](https://inch-ci.org/github/zuazo/ssh_authorized_keys-cookbook)
 Description
 ===========
 
@@ -27,7 +27,7 @@ This cookbook has been tested on the following platforms:
 * SUSE
 * Ubuntu
 
-Please, [let us know](https://github.com/onddo/ssh_authorized_keys-cookbook/issues/new?title=I%20have%20used%20it%20successfully%20on%20...) if you use it successfully on any other platform.
+Please, [let us know](https://github.com/zuazo/ssh_authorized_keys-cookbook/issues/new?title=I%20have%20used%20it%20successfully%20on%20...) if you use it successfully on any other platform.
 
 Definitions
 ===========
@@ -144,7 +144,7 @@ These attributes are primarily intended to support the different platforms. Do n
 Testing
 =======
 
-See [TESTING.md](https://github.com/onddo/ssh_authorized_keys-cookbook/blob/master/TESTING.md).
+See [TESTING.md](https://github.com/zuazo/ssh_authorized_keys-cookbook/blob/master/TESTING.md).
 
 ## ChefSpec Tests
 
@@ -168,14 +168,14 @@ end
 Contributing
 ============
 
-Please do not hesitate to [open an issue](https://github.com/onddo/ssh_authorized_keys-cookbook/issues/new) with any questions or problems.
+Please do not hesitate to [open an issue](https://github.com/zuazo/ssh_authorized_keys-cookbook/issues/new) with any questions or problems.
 
-See [CONTRIBUTING.md](https://github.com/onddo/ssh_authorized_keys-cookbook/blob/master/CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/zuazo/ssh_authorized_keys-cookbook/blob/master/CONTRIBUTING.md).
 
 TODO
 ====
 
-See [TODO.md](https://github.com/onddo/ssh_authorized_keys-cookbook/blob/master/TODO.md).
+See [TODO.md](https://github.com/zuazo/ssh_authorized_keys-cookbook/blob/master/TODO.md).
 
 
 License and Author
@@ -184,8 +184,9 @@ License and Author
 |                      |                                          |
 |:---------------------|:-----------------------------------------|
 | **Author:**          | [Raul Rodriguez](https://github.com/raulr) (<raul@onddo.com>)
-| **Author:**          | [Xabier de Zuazo](https://github.com/zuazo) (<xabier@onddo.com>)
-| **Copyright:**       | Copyright (c) 2015, Onddo Labs, SL. (www.onddo.com)
+| **Author:**          | [Xabier de Zuazo](https://github.com/zuazo) (<xabier@zuazo.org>)
+| **Copyright:**       | Copyright (c) 2015, Xabier de Zuazo
+| **Copyright:**       | Copyright (c) 2015, Onddo Labs, SL.
 | **License:**         | Apache License, Version 2.0
 
     Licensed under the Apache License, Version 2.0 (the "License");
