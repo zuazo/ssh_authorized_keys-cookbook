@@ -1,4 +1,5 @@
 [![Cookbook Version](https://img.shields.io/cookbook/v/ssh_authorized_keys.svg?style=flat)](https://supermarket.chef.io/cookbooks/ssh_authorized_keys)
+[![GitHub Source](https://img.shields.io/badge/source-GitHub-blue.svg?style=flat)](https://github.com/zuazo/ssh_authorized_keys-cookbook)
 [![Dependency Status](http://img.shields.io/gemnasium/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://gemnasium.com/zuazo/ssh_authorized_keys-cookbook)
 [![Code Climate](https://img.shields.io/codeclimate/github/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://codeclimate.com/github/zuazo/ssh_authorized_keys-cookbook)
 [![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
