@@ -24,7 +24,7 @@ maintainer_email 'xabier@zuazo.org'
 license 'Apache 2.0'
 description 'Creates SSH authorized keys files in user home directories.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.3.0' # WiP
+version '0.3.0'
 
 supports 'amazon'
 supports 'debian'
