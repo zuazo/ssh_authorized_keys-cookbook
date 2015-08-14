@@ -135,5 +135,6 @@ end
 
 file '/root/.ssh/key2' do
   mode '00600'
-  content(key2_priv)
+  content key2_priv
+  sensitive true
 end
