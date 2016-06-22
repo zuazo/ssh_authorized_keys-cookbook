@@ -34,9 +34,7 @@ define :ssh_authorize_key do
     comment: params[:comment] || params[:name]
   }
 
-  unless params[:validate_key] == false
-    assert_key(ssh_key[:key])
-  end
+  assert_key(ssh_key[:key]) unless params[:validate_key] == false
   assert_keytype(ssh_key[:keytype])
   assert_comment(ssh_key[:comment])
 
