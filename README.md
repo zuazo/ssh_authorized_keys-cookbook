@@ -51,6 +51,7 @@ Authorize a key for public key authentication using SSH.
 | keytype   | `'ssh-rsa'`       | SSH key type.                            |
 | comment   | *definition name* | SSH key comment.                         |
 | options   | `nil`             | SSH key options as a hash.               |
+| validate_key | true           | Enable/Disable assert_key                |
 
 Usage Examples
 ==============
