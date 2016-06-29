@@ -30,6 +30,7 @@ define :ssh_authorize_key do
   ssh_key = {
     options: params[:options],
     key: params[:key],
+    validate_key: params[:validate_key],
     keytype: params[:keytype] || 'ssh-rsa',
     comment: params[:comment] || params[:name]
   }
