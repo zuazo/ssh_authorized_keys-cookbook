@@ -45,16 +45,16 @@ Authorize a key for public key authentication using SSH.
 
 ## ssh_authorize_key Parameters
 
-| Parameter | Default           | Description                              |
-|:----------|:------------------|:-----------------------------------------|
-| user      | `nil`             | System user **(required)**.              |
-| group     | user              | System group.                            |
-| home      | *calculated*      | System user home path.                   |
-| key       | `nil`             | SSH public key in base64 **(required)**. |
-| keytype   | `'ssh-rsa'`       | SSH key type.                            |
-| comment   | *definition name* | SSH key comment.                         |
-| options   | `nil`             | SSH key options as a hash.               |
-| validate_key | true           | Enable/Disable assert_key                |
+| Parameter    | Default           | Description                              |
+|:-------------|:------------------|:-----------------------------------------|
+| user         | `nil`             | System user **(required)**.              |
+| group        | user              | System group.                            |
+| home         | *calculated*      | System user home path.                   |
+| key          | `nil`             | SSH public key in base64 **(required)**. |
+| keytype      | `'ssh-rsa'`       | SSH key type.                            |
+| comment      | *definition name* | SSH key comment.                         |
+| options      | `nil`             | SSH key options as a hash.               |
+| validate_key | `true`            | Enable/Disable assert_key                |
 
 Usage Examples
 ==============
