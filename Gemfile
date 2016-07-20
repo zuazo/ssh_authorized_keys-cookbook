@@ -12,12 +12,12 @@ end
 
 group :test do
   gem 'rake'
-  gem 'berkshelf', '~> 3.2'
+  gem 'berkshelf', '~> 4.0'
 end
 
 group :style do
-  gem 'foodcritic', '= 4.0.0'
-  gem 'rubocop', '= 0.33.0'
+  gem 'foodcritic', '~> 6.0'
+  gem 'rubocop', '~> 0.41'
 end
 
 group :unit do
@@ -25,7 +25,7 @@ group :unit do
   gem 'simplecov', '~> 0.9'
   gem 'should_not', '~> 1.1'
   gem 'chefspec', '~> 4.2'
-  gem 'ohai', '~> 7.4' if RUBY_VERSION < '2'
+  gem 'rack', '~> 1.0' if RUBY_VERSION < '2.2'
 end
 
 group :integration do
@@ -35,13 +35,13 @@ group :integration do
 end
 
 group :integration, :integration_cloud do
-  gem 'kitchen-ec2', '~> 0.8'
+  gem 'kitchen-ec2', '~> 1.0'
   gem 'kitchen-digitalocean', '~> 0.8'
 end
 
 group :guard do
   gem 'guard', '~> 2.12'
-  gem 'guard-foodcritic', '~> 1.1'
+  gem 'guard-foodcritic', '~> 2.0'
   gem 'guard-rubocop', '~> 1.2'
   gem 'guard-rspec', '~> 4.6'
   # Temporary disabled: Error is: cannot load such file -- guard/kitchen

@@ -3,6 +3,7 @@
 # Cookbook Name:: ssh_authorized_keys
 # Library:: resource_helpers
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
+# Copyright:: Copyright (c) 2015-2016 Xabier de Zuazo
 # Copyright:: Copyright (c) 2015 Onddo Labs, SL.
 # License:: Apache License, Version 2.0
 #
@@ -48,9 +49,9 @@ module SshAuthorizedKeysCookbook
     # @return void
     def assert_user(user)
       return if user.is_a?(String) && !user.empty?
-      fail Chef::Exceptions::ValidationFailed,
-           'ssh_authorize_key: user parameter must be a valid system user! '\
-           "You passed #{user.inspect}."
+      raise Chef::Exceptions::ValidationFailed,
+            'ssh_authorize_key: user parameter must be a valid system user! '\
+            "You passed #{user.inspect}."
     end
 
     # Asserts that the SSH public key is correct.
@@ -60,9 +61,9 @@ module SshAuthorizedKeysCookbook
     # @return void
     def assert_key(key)
       return if key.is_a?(String) && !SSH_KEY_REGEX.match(key).nil?
-      fail Chef::Exceptions::ValidationFailed,
-           'ssh_authorize_key: key parameter must be a valid SSH public key! '\
-           "You passed #{key.inspect}."
+      raise Chef::Exceptions::ValidationFailed,
+            'ssh_authorize_key: key parameter must be a valid SSH public key! '\
+            "You passed #{key.inspect}."
     end
 
     # Returns allowed SSH key types list.
@@ -85,9 +86,9 @@ module SshAuthorizedKeysCookbook
     # @return void
     def assert_keytype(keytype)
       return if allowed_keytypes.include?(keytype)
-      fail Chef::Exceptions::ValidationFailed,
-           'ssh_authorize_key: keytype parameter must be equal to one of: '\
-           "#{allowed_keytypes.join(', ')}! You passed #{keytype.inspect}."
+      raise Chef::Exceptions::ValidationFailed,
+            'ssh_authorize_key: keytype parameter must be equal to one of: '\
+            "#{allowed_keytypes.join(', ')}! You passed #{keytype.inspect}."
     end
 
     # Asserts that the key comment is correct.
@@ -99,9 +100,9 @@ module SshAuthorizedKeysCookbook
       if comment.is_a?(String) && !comment.empty? && !comment.include?("\n")
         return
       end
-      fail Chef::Exceptions::ValidationFailed,
-           'ssh_authorize_key: comment parameter must be valid! You passed '\
-           "#{comment.inspect}."
+      raise Chef::Exceptions::ValidationFailed,
+            'ssh_authorize_key: comment parameter must be valid! You passed '\
+            "#{comment.inspect}."
     end
 
     # Returns the home directory of a system user.
