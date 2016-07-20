@@ -19,6 +19,7 @@ Requirements
 
 This cookbook has been tested on the following platforms:
 
+* AIX
 * Amazon Linux
 * Debian
 * CentOS
@@ -189,7 +190,8 @@ License and Author
 | **Author:**          | [Raul Rodriguez](https://github.com/raulr) (<raul@onddo.com>)
 | **Author:**          | [Xabier de Zuazo](https://github.com/zuazo) (<xabier@zuazo.org>)
 | **Contributor:**     | [Ong Ming Yang](https://github.com/ongmingyang)
-| **Copyright:**       | Copyright (c) 2015, Xabier de Zuazo
+| **Contributor:**     | [MVNW](https://github.com/MVNW)
+| **Copyright:**       | Copyright (c) 2015-2016, Xabier de Zuazo
 | **Copyright:**       | Copyright (c) 2015, Onddo Labs, SL.
 | **License:**         | Apache License, Version 2.0
 

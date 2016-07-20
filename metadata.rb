@@ -2,6 +2,7 @@
 #
 # Cookbook Name:: ssh_authorized_keys
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
+# Copyright:: Copyright (c) 2015-2016 Xabier de Zuazo
 # Copyright:: Copyright (c) 2015 Onddo Labs, SL.
 # License:: Apache License, Version 2.0
 #
@@ -26,6 +27,7 @@ description 'Creates SSH authorized keys files in user home directories.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '0.4.0' # WiP
 
+supports 'aix'
 supports 'amazon'
 supports 'debian'
 supports 'centos'
