@@ -34,6 +34,11 @@ This cookbook has been tested on the following platforms:
 
 Please, [let us know](https://github.com/zuazo/ssh_authorized_keys-cookbook/issues/new?title=I%20have%20used%20it%20successfully%20on%20...) if you use it successfully on any other platform.
 
+## Required Applications
+
+* Chef `12` or higher.
+* Ruby `2.3` or higher.
+
 Definitions
 ===========
 

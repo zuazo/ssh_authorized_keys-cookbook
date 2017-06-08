@@ -4,7 +4,11 @@ driver:
 
 provisioner:
   name: chef_zero
+<% if ENV.key?('CHEF_VERSION') %>
+  require_chef_omnibus: <%= ENV['CHEF_VERSION'].sub(/^.*> (.*)[.][0-9]+$/, '\1') %>
+<% else %>
   require_chef_omnibus: true
+<% end %>
 
 platforms:
 - name: centos-5.11
