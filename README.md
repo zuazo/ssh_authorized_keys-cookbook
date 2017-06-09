@@ -199,6 +199,7 @@ License and Author
 | **Author:**          | [Xabier de Zuazo](https://github.com/zuazo) (<xabier@zuazo.org>)
 | **Contributor:**     | [Ong Ming Yang](https://github.com/ongmingyang)
 | **Contributor:**     | [MVNW](https://github.com/MVNW)
+| **Contributor:**     | [Anthony Caiafa](https://github.com/acaiafa)
 | **Copyright:**       | Copyright (c) 2015-2016, Xabier de Zuazo
 | **Copyright:**       | Copyright (c) 2015, Onddo Labs, SL.
 | **License:**         | Apache License, Version 2.0
