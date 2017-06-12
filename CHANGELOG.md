@@ -4,12 +4,16 @@ All notable changes to the [`ssh_authorized_keys`](https://supermarket.chef.io/c
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [0.4.0] - 2017-06-12
 ### Added
 - Adding ability to disable assert ([issue #6](https://github.com/zuazo/ssh_authorized_keys-cookbook/pull/6), thanks [Anthony Caiafa](https://github.com/acaiafa)).
 - Allowing direct key injection ([issue #7](https://github.com/zuazo/ssh_authorized_keys-cookbook/pull/7), thanks [Anthony Caiafa](https://github.com/acaiafa)).
 - Add AIX as supported platform ([issue #8](https://github.com/zuazo/ssh_authorized_keys-cookbook/issues/8), thanks [Mike Veltman](https://github.com/MVNW)).
 - metadata: Add `chef_version`.
+
+### Removed
+- Drop Ruby `< 2.3` support.
+- Drop Chef `< 12` support.
 
 ### Documentation Changes
 - README:
@@ -41,6 +45,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Initial release of `ssh_authorized_keys`.
 
-[Unreleased]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.4.0...HEAD
+[0.4.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.1.0...0.2.0
