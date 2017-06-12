@@ -4,6 +4,9 @@ All notable changes to the [`ssh_authorized_keys`](https://supermarket.chef.io/c
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+- ...
+
 ## [0.4.0] - 2017-06-12
 ### Added
 - Adding ability to disable assert ([issue #6](https://github.com/zuazo/ssh_authorized_keys-cookbook/pull/6), thanks [Anthony Caiafa](https://github.com/acaiafa)).

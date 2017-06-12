@@ -7,8 +7,8 @@ SSH Authorized Keys Cookbook
 [![Cookbook Version](https://img.shields.io/cookbook/v/ssh_authorized_keys.svg?style=flat)](https://supermarket.chef.io/cookbooks/ssh_authorized_keys)
 [![Dependency Status](http://img.shields.io/gemnasium/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://gemnasium.com/zuazo/ssh_authorized_keys-cookbook)
 [![Code Climate](https://img.shields.io/codeclimate/github/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://codeclimate.com/github/zuazo/ssh_authorized_keys-cookbook)
-[![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook/0.4.0.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
-[![Coverage Status](https://img.shields.io/coveralls/zuazo/ssh_authorized_keys-cookbook/0.4.0.svg?style=flat)](https://coveralls.io/r/zuazo/ssh_authorized_keys-cookbook?branch=0.4.0)
+[![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
+[![Coverage Status](https://img.shields.io/coveralls/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://coveralls.io/r/zuazo/ssh_authorized_keys-cookbook?branch=master)
 [![Inline docs](https://inch-ci.org/github/zuazo/ssh_authorized_keys-cookbook.svg?branch=master&style=flat)](https://inch-ci.org/github/zuazo/ssh_authorized_keys-cookbook)
 
 [Chef](https://www.chef.io/) cookbook to create SSH authorized keys files in user home directories.
