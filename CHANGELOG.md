@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - ...
 
 ## [0.4.0] - 2017-06-12
+[![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook/0.4.0.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
+
 ### Added
 - Adding ability to disable assert ([issue #6](https://github.com/zuazo/ssh_authorized_keys-cookbook/pull/6), thanks [Anthony Caiafa](https://github.com/acaiafa)).
 - Allowing direct key injection ([issue #7](https://github.com/zuazo/ssh_authorized_keys-cookbook/pull/7), thanks [Anthony Caiafa](https://github.com/acaiafa)).
