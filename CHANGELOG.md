@@ -37,6 +37,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Sort keys always in the same order ([issue #2](https://github.com/zuazo/ssh_authorized_keys-cookbook/issues/2), thanks to [Chris Burroughs](https://github.com/cburroughs) for the idea).
 
 ## 0.1.0 - 2015-01-11
+[![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook/0.1.0.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
+
 - Initial release of `ssh_authorized_keys`.
 
 [Unreleased]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.3.0...HEAD
