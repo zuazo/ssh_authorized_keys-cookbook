@@ -49,9 +49,9 @@ Authorize a key for public key authentication using SSH.
 
 **Warning:** This definition uses the [Accumulator Pattern](http://docs.chef.io/definitions.html#many-recipes-one-definition). This implies that any SSH key added using other methods (such as **keys added by hand**) will be **deleted**.
 
-## ssh_authorize_key Parameters
+## ssh_authorize_key Properties
 
-| Parameter    | Default           | Description                              |
+| Property     | Default           | Description                              |
 |:-------------|:------------------|:-----------------------------------------|
 | user         | `nil`             | System user **(required)**.              |
 | group        | user              | System group.                            |
