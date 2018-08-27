@@ -39,7 +39,7 @@ content = [
   'noo+OcuW6Moi0vpNiUGy2VnM0nyecLoQxggvnj1392uoMdS4VY71PGdcBac7p9IwAwYxlsuFEKR'\
   'cfKisJAHDEblgSFyC9lLMMjTSxxKn8s5AaR1h+Lb3Kwibd7ikvIgYRybTbD12FtQRxuWZBVm39C'\
   'M3539gT6514IaYyYVDyIEFDyGjK2UV27ah56jMaRFGX4IIh2gH5P2XaV7As5p8RPYoWwf+pCz19'\
-  'mrPd/ bob@home.com comment'
+  'mrPd/ bob@home.com comment',
 ].join("\n") << "\n"
 
 describe file('/home/bob/.ssh/authorized_keys') do
@@ -63,4 +63,15 @@ describe file('/home/bob2/.ssh/authorized_keys') do
   it { should be_grouped_into 'bob2' }
   it { should be_mode 600 }
   its(:content) { should eq content }
+end
+
+subscribe_file_content =
+  "Test file for subscribe to ssh_authorize_key 'bob@acme.com'."
+
+describe file('/home/bob/bob-subscribe-test.txt') do
+  it { should be_file }
+  it { should be_owned_by 'bob' }
+  it { should be_grouped_into 'bob' }
+  it { should be_mode 600 }
+  its(:content) { should eq subscribe_file_content }
 end

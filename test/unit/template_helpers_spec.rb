@@ -35,7 +35,7 @@ describe SshAuthorizedKeysCookbook::TemplateHelpers, order: :random do
       1 => %(#{option}="1"),
       'NAME=value 1' => %(#{option}="NAME=value 1"),
       'NAME="value"' => %(#{option}="NAME=\\"value\\""),
-      'NAME="va\nlue"' => %(#{option}="NAME=\\"va\\\\nlue\\"")
+      'NAME="va\nlue"' => %(#{option}="NAME=\\"va\\\\nlue\\""),
     }.each do |value, result|
       it "returns #{result.inspect} for #{value.inspect}" do
         expect(helpers.render_option_value(option, value)).to eq(result)
@@ -47,7 +47,7 @@ describe SshAuthorizedKeysCookbook::TemplateHelpers, order: :random do
     let(:options) do
       {
         'no-agent-forwarding' => true,
-        'environment' => 'DISPLAY=:0'
+        'environment' => 'DISPLAY=:0',
       }
     end
     it 'renders options correctly' do

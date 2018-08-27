@@ -95,7 +95,7 @@ describe SshAuthorizedKeysCookbook::ResourceHelpers, order: :random do
       nil,
       1,
       Object.new,
-      'ssh-bad'
+      'ssh-bad',
     ].each do |keytype|
       it "raises an exception for #{keytype.inspect}" do
         expect { helpers.assert_keytype(keytype) }
@@ -134,8 +134,7 @@ describe SshAuthorizedKeysCookbook::ResourceHelpers, order: :random do
 
     context 'when user does not exist' do
       before do
-        expect(Etc).to receive(:getpwnam).with('bob')
-          .and_raise(ArgumentError.new)
+        expect(Etc).to receive(:getpwnam).with('bob').and_raise(ArgumentError.new)
         allow(Chef::Log).to receive(:warn)
       end
 
@@ -164,8 +163,7 @@ describe SshAuthorizedKeysCookbook::ResourceHelpers, order: :random do
 
     context 'when user does not exist' do
       before do
-        expect(Etc).to receive(:getpwnam).with('bob')
-          .and_raise(ArgumentError.new)
+        expect(Etc).to receive(:getpwnam).with('bob').and_raise(ArgumentError.new)
         allow(Chef::Log).to receive(:warn)
       end
 
