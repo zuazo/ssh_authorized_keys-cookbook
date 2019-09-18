@@ -1,6 +1,6 @@
 # encoding: UTF-8
 #
-# Cookbook Name:: ssh_authorized_keys_test
+# Cookbook:: ssh_authorized_keys_test
 # Recipe:: default
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
 # Copyright:: Copyright (c) 2015 Onddo Labs, SL.

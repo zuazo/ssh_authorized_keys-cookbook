@@ -21,7 +21,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'libraries'))
 
 require 'chefspec'
 require 'chefspec/berkshelf'
-require 'should_not/rspec'
+# require 'should_not/rspec'
 
 require 'support/coverage'
 
@@ -47,7 +47,5 @@ RSpec.configure do |config|
   config.formatter = :documentation
   config.tty = true
   config.platform = 'ubuntu'
-  config.version = '12.04'
+  config.version = '18.04'
 end
-
-at_exit { ChefSpec::Coverage.report! }

@@ -60,9 +60,10 @@ desc 'Generate Ruby documentation'
 task doc: %w(yard)
 
 namespace :style do
+  require 'cookstyle'
   require 'rubocop/rake_task'
   desc 'Run Ruby style checks using rubocop'
-  RuboCop::RakeTask.new(:ruby)
+  RuboCop::RakeTask.new(:cookstyle)
 
   require 'foodcritic'
   desc 'Run Chef style checks using foodcritic'
@@ -75,7 +76,7 @@ namespace :style do
 end
 
 desc 'Run all style checks'
-task style: %w(style:chef style:ruby)
+task style: %w(style:chef style:cookstyle)
 
 desc 'Run ChefSpec unit tests'
 task :unit do
