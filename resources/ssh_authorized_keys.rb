@@ -26,7 +26,7 @@ resource_name :ssh_authorized_keys
 description 'Manages ssh keys in users authorized_keys file'
 
 property :user, String,
-         required: true
+         required: true,
          description: 'System user **(required)**'
 
 property :group, String,
@@ -39,7 +39,7 @@ property :home, String,
          description: 'System user home path'
 
 property :key, String,
-         required: true
+         required: true,
          description: 'SSH public key in base64 **(required)**'
 
 property :keytype, String,
@@ -53,7 +53,7 @@ property :comment, String,
 property :options, Hash,
          description: 'SSH key options as a hash'
 
-property :validate_key, [True, False],
+property :validate_key, [true, false],
          default: true,
          description: 'Enable/Disable assert_key'
 
@@ -67,17 +67,17 @@ action :install do
 
   ssh_key = Mash.new(
     options:  new_resource.options,
-    key: new_resouce.key,
+    key: new_resource.key,
     validate_key: new_resource.validate_key,
     keytype: new_resource.keytype,
-    comment: new_resouce.comment,
+    comment: new_resource.comment,
   )
 
-  assert_key(ssh_key['key']) unless params['validate_key'] == false
+  assert_key(ssh_key['key']) if ssh_key['validate_key']
   assert_keytype(ssh_key['keytype'])
   assert_comment(ssh_key['comment'])
 
-  path = ::File.join(home, '.ssh', 'authorized_keys')
+  path = ::File.join(home,'.ssh')
 
   directory path do
     recursive true
@@ -89,36 +89,19 @@ action :install do
   # Accumulator Pattern:
   # https://blog.dnsimple.com/2017/10/chef-accumulators/
   with_run_context :root do
-    edit_resource(:template, path) do |new_resource|
-      cookbook_name 'ssh_authorized_keys'
+    edit_resource(:template, "#{path}/authorized_keys") do
+      cookbook 'ssh_authorized_keys'
       source 'authorized_keys.erb'
       owner user
       group group
       mode '00600'
-      variables['keys'][ssh_key['comment']] = ssh_key
-      variables['keys'] = Hash[variables['keys'].sort]
+      variables[:keys] ||= {}
+      variables[:keys] = variables[:keys].merge({ssh_key['comment'] => ssh_key})
+      variables[:keys] = Hash[variables[:keys].sort]
       action :nothing
       delayed_action :create
     end
   end
-  # t = template path do
-  #       variables keys: {}
-  #     end
-  # t.cookbook('ssh_authorized_keys')
-  # t.source('authorized_keys.erb')
-  # t.owner(user)
-  # t.group(group)
-  # t.mode('00600')
-  # t.variables[:keys][ssh_key['comment']] = ssh_key
-  # # Sort file content by comment field: Calling the same ssh_authorized_keys in
-  # # different order produces the same result.
-  # t.variables[:keys] = Hash[t.variables[:keys].sort]
-  #
-  # # For notifications support (only works in Chef 12).
-  # # @example
-  # #   my_definition = ssh_authorize_key 'bob@acme.com' { ... }
-  # #   my_definition.notifies :run, 'execute[thing]'
-  # t
 end
 
 action :remove do

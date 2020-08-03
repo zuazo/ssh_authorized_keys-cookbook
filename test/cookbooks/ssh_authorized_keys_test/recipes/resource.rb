@@ -90,13 +90,13 @@ group 'alice' do
   members %w(alice)
 end
 
-ssh_authorize_keys 'bob@acme.com' do
+ssh_authorized_keys 'bob@acme.com' do
   keytype 'ssh-rsa'
   key key1
   user 'bob'
 end
 
-ssh_authorize_keys 'bob@home.com' do
+ssh_authorized_keys 'bob@home.com' do
   key key2
   comment 'bob@home.com comment'
   user 'bob'
@@ -104,19 +104,19 @@ end
 
 # bob2: Same as bob but keys in reverse order
 
-ssh_authorize_keys 'bob@home.com' do
+ssh_authorized_keys 'bob@home.com' do
   key key2
   comment 'bob@home.com comment'
   user 'bob2'
 end
 
-ssh_authorize_keys 'bob@acme.com' do
+ssh_authorized_keys 'bob@acme.com' do
   keytype 'ssh-rsa'
   key key1
   user 'bob2'
 end
 
-ssh_authorize_keys 'alice@acme.com' do
+ssh_authorized_keys 'alice@acme.com' do
   key key2
   user 'alice'
   options(
