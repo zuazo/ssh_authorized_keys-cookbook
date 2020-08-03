@@ -74,17 +74,19 @@ First of all, don't forget to include the `ssh_authorized_keys` cookbook as a de
 depends 'ssh_authorized_keys'
 ```
 
-You can use the `ssh_authorize_key` to authorize SSH public keys to use SSH public key authentication:
+`ssh_authorize_key` definition is deprectated please use `ssh_authorized_keys` resource
+
+You can use the `ssh_authorized_keys` to authorize SSH public keys to use SSH public key authentication:
 
 ```ruby
 # Bob is the admin here.
 
-ssh_authorize_key 'bob@acme.com' do
+ssh_authorized_keys 'bob@acme.com' do
   key 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCctNyRouVDhzjiP[...]'
   user 'root'
 end
 
-ssh_authorize_key 'alice@acme.com' do
+ssh_authorized_keys 'alice@acme.com' do
   key 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCySLKbpFRGCrKU/[...]'
   user 'alice'
 end
@@ -96,7 +98,7 @@ You can set the options field as follows:
 
 ```ruby
 # As the root user by default in ubuntu:
-ssh_authorize_key 'bob@acme.com' do
+ssh_authorized_keys 'bob@acme.com' do
   key 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCctNyRouVDhzjiP[...]'
   user 'root'
   options(
@@ -135,7 +137,7 @@ users = data_bag_item('ssh', 'users')
 users.delete('id')
 
 users.each do |name, ssh_key|
-  ssh_authorize_key name do
+  ssh_authorized_keys name do
     key ssh_key['key']
     user ssh_key['user']
   end

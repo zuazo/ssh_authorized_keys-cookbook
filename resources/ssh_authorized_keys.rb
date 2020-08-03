@@ -70,14 +70,14 @@ action :install do
     key: new_resource.key,
     validate_key: new_resource.validate_key,
     keytype: new_resource.keytype,
-    comment: new_resource.comment,
+    comment: new_resource.comment
   )
 
   assert_key(ssh_key['key']) if ssh_key['validate_key']
   assert_keytype(ssh_key['keytype'])
   assert_comment(ssh_key['comment'])
 
-  path = ::File.join(home,'.ssh')
+  path = ::File.join(home, '.ssh')
 
   directory path do
     recursive true
@@ -96,7 +96,7 @@ action :install do
       group group
       mode '00600'
       variables[:keys] ||= {}
-      variables[:keys] = variables[:keys].merge({ssh_key['comment'] => ssh_key})
+      variables[:keys] = variables[:keys].merge({ ssh_key['comment'] => ssh_key })
       variables[:keys] = Hash[variables[:keys].sort]
       action :nothing
       delayed_action :create
