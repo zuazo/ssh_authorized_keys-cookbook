@@ -7,6 +7,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 - ...
 
+## [1.0.0] - 2020-08-03
+[![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook/0.4.0.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
+
+### Added
+- Added `ssh_authorized_keys` resource
+- Deprecated `ssh_authorize_key` definition
+- Added tests for new resource
+- Updated chef-infra client versions for tests
+- Updated OS versions for tests
+
+### Documentation Changes
+- README:
+  - Add resource.
+
 ## [0.4.0] - 2017-06-12
 [![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook/0.4.0.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
 
@@ -50,7 +64,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Initial release of `ssh_authorized_keys`.
 
-[Unreleased]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.4.0...HEAD
+[Unreleased]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.4.0...1.0.0
 [0.4.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.1.0...0.2.0
