@@ -1,6 +1,6 @@
 # encoding: UTF-8
 #
-# Cookbook Name:: ssh_authorized_keys_test
+# Cookbook:: ssh_authorized_keys_test
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
 # Copyright:: Copyright (c) 2015 Onddo Labs, SL.
 # License:: Apache License, Version 2.0
@@ -21,12 +21,11 @@
 name 'ssh_authorized_keys_test'
 maintainer 'Xabier de Zuazo'
 maintainer_email 'xabier@zuazo.org'
-license 'Apache 2.0'
+license 'Apache-2.0'
 description <<-EOS
 This cookbook is used with test-kitchen to test the parent, ssh_authorized_keys
 cookbook.
 EOS
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '0.1.0' # WiP
 
 depends 'ssh_authorized_keys'

@@ -1,6 +1,6 @@
 # encoding: UTF-8
 #
-# Cookbook Name:: ssh_authorized_keys_test
+# Cookbook:: ssh_authorized_keys_test
 # Recipe:: default
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
 # Copyright:: Copyright (c) 2015 Onddo Labs, SL.
@@ -60,11 +60,11 @@ key2_priv = [
   'hQ31UQKBgQCgfC3GjleXWYBVzQihvVdCToM6CGOljzXNcWhqroBhkKACwFXMTvGB',
   'Dx7Mn9rpvnJysHHaAzZVgGan3Bd1qDyDWchZXD5vERgzy84xV6oAPriuvMzOTCDD',
   'miAKI9hX5GxD4lWMFvxEsNv0KEL7O2TA7xFRPY4u5HD+pyF/oYLXgA==',
-  '-----END RSA PRIVATE KEY-----'
+  '-----END RSA PRIVATE KEY-----',
 ].join("\n")
 
 user 'bob' do
-  supports manage_home: true
+  manage_home true
   home '/home/bob'
 end
 
@@ -73,7 +73,7 @@ group 'bob' do
 end
 
 user 'bob2' do
-  supports manage_home: true
+  manage_home true
   home '/home/bob2'
 end
 
@@ -82,7 +82,7 @@ group 'bob2' do
 end
 
 user 'alice' do
-  supports manage_home: true
+  manage_home true
   home '/home/alice'
 end
 

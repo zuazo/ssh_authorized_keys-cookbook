@@ -1,6 +1,6 @@
 # encoding: UTF-8
 #
-# Cookbook Name:: ssh_authorized_keys
+# Cookbook:: ssh_authorized_keys
 # Definition:: ssh_authorize_key
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
 # Copyright:: Copyright (c) 2015 Onddo Labs, SL.
@@ -32,7 +32,7 @@ define :ssh_authorize_key do
     key: params[:key],
     validate_key: params[:validate_key],
     keytype: params[:keytype] || 'ssh-rsa',
-    comment: params[:comment] || params[:name]
+    comment: params[:comment] || params[:name],
   }
 
   assert_key(ssh_key[:key]) unless params[:validate_key] == false
