@@ -3,28 +3,23 @@ driver:
   aws_ssh_key_id: <%= ENV['AWS_KEYPAIR_NAME'] %>
 
 platforms:
-- name: centos-5-8-x64
-  driver_plugin: digitalocean
-  driver_config:
-    flavor: 512MB
-
-- name: centos-6-5-x64
-  driver_plugin: digitalocean
-  driver_config:
-    flavor: 512MB
-
 - name: centos-7-0-x64
   driver_plugin: digitalocean
   driver_config:
     flavor: 512MB
 
-- name: debian-6-0-x64
+- name: centos-8-0-x64
+  driver_plugin: digitalocean
+  driver_config:
+    flavor: 512MB
+
+- name: debian-8-0-x64
   driver_plugin: digitalocean
   driver_config:
     flavor: 512MB
   run_list: ["recipe[apt]"]
 
-- name: debian-7-0-x64
+- name: debian-9-0-x64
   driver_plugin: digitalocean
   driver_config:
     flavor: 512MB
@@ -40,39 +35,29 @@ platforms:
   driver_config:
     flavor: 512MB
 
-- name: ubuntu-10-04-x64
+- name: ubuntu-16-04-x64
   driver_plugin: digitalocean
   driver_config:
     flavor: 512MB
   run_list: ["recipe[apt]"]
 
-- name: ubuntu-12-04-x64
+- name: ubuntu-18-04-x64
   driver_plugin: digitalocean
   driver_config:
     flavor: 512MB
   run_list: ["recipe[apt]"]
 
-- name: ubuntu-14-04-x64
+- name: ubuntu-20-04-x64
   driver_plugin: digitalocean
   driver_config:
     flavor: 512MB
   run_list: ["recipe[apt]"]
 
-- name: amazon-2011.02.1
+- name: amazon-2
   driver_plugin: ec2
   driver_config:
-    image_id: ami-8e1fece7
-    flavor_id: t1.micro
-    username: ec2-user
-<% if ENV['SSH_AGENT_PID'].nil? %>
-    ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
-<% end %>
-
-- name: amazon-2013.09.2
-  driver_plugin: ec2
-  driver_config:
-    image_id: ami-bba18dd2
-    flavor_id: t1.micro
+    image_id: ami-02354e95b39ca8dec
+    flavor_id: t2.micro
     username: ec2-user
 <% if ENV['SSH_AGENT_PID'].nil? %>
     ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
