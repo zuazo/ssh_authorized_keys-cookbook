@@ -10,7 +10,6 @@ provisioner:
   <% else %>
   product_version: 16
   <% end %>
-  deprecations_as_errors: true
   chef_license: accept-no-persist
 
 platforms:
@@ -33,5 +32,11 @@ suites:
   run_list:
   - recipe[ssh_authorized_keys_test::default]
 - name: resource
+  provisioner:
+    deprecations_as_errors: true
   run_list:
     - recipe[ssh_authorized_keys_test::resource]
+  verifier:
+    name: inspec
+    inspec_tests:
+      - test/integration/default

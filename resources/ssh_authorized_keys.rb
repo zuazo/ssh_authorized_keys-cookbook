@@ -83,7 +83,7 @@ action :install do
     recursive true
     user user
     group group
-    mode '00700'
+    mode '700'
   end
 
   # Accumulator Pattern:
@@ -94,7 +94,7 @@ action :install do
       source 'authorized_keys.erb'
       owner user
       group group
-      mode '00600'
+      mode '600'
       variables[:keys] ||= {}
       variables[:keys] = variables[:keys].merge({ ssh_key['comment'] => ssh_key })
       variables[:keys] = Hash[variables[:keys].sort]

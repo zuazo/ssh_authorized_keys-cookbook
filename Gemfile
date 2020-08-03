@@ -12,53 +12,52 @@ source 'https://rubygems.org'
 chef_version = ENV.key?('CHEF_VERSION') ? ENV['CHEF_VERSION'] : nil
 
 group :doc do
-  gem 'yard', '~> 0.9.5'
+  gem 'yard'
 end
 
 group :test do
-  gem 'rake', '~> 12.0'
-  gem 'berkshelf', '~> 6.0'
+  gem 'rake'
+  gem 'berkshelf'
 end
 
 group :style do
-  gem 'foodcritic', '~> 11.1.0'
-  gem 'rubocop', '~> 0.42.0'
+  gem 'foodcritic'
+  gem 'rubocop'
 end
 
 group :unit do
   gem 'chef', chef_version unless chef_version.nil?
-  gem 'chefspec', '~> 7.0'
-  gem 'simplecov', '~> 0.14.0'
-  gem 'should_not', '~> 1.1'
+  gem 'chefspec'
+  gem 'simplecov'
+  gem 'should_not'
 end
 
 group :integration do
-  gem 'test-kitchen', '~> 1.13'
-end
+  gem 'test-kitchen'
 
 group :integration_docker do
-  gem 'kitchen-docker', '~> 2.3'
+  gem 'kitchen-docker'
 end
 
 group :integration_vagrant do
-  gem 'vagrant-wrapper', '~> 2.0'
-  gem 'kitchen-vagrant', '~> 1.0'
+  gem 'vagrant-wrapper'
+  gem 'kitchen-vagrant'
 end
 
 group :integration_cloud do
-  gem 'kitchen-ec2', '~> 1.2'
-  gem 'kitchen-digitalocean', '~> 0.9.5'
+  gem 'kitchen-ec2'
+  gem 'kitchen-digitalocean'
 end
 
 group :guard do
-  gem 'guard', '~> 2.14'
-  gem 'guard-foodcritic', '~> 3.0'
-  gem 'guard-rubocop', '~> 1.1'
-  gem 'guard-rspec', '~> 4.3'
+  gem 'guard'
+  gem 'guard-foodcritic'
+  gem 'guard-rubocop'
+  gem 'guard-rspec'
   # Temporary disabled: Error is: cannot load such file -- guard/kitchen
   # gem 'guard-kitchen', '~> 0.0'
 end
 
 group :travis do
-  gem 'coveralls', '~> 0.7', require: false
+  gem 'coveralls', require: false
 end

@@ -20,6 +20,7 @@
 #
 
 define :ssh_authorize_key do
+  Chef.deprecated(:generic, 'The use of the `ssh_authorize_key` definition is Deprecated. Please use `ssh_authorized_keys` resource instead.')
   self.class.send(:include, ::SshAuthorizedKeysCookbook::ResourceHelpers)
 
   user = params[:user]
