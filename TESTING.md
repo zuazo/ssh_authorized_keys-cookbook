@@ -8,7 +8,8 @@ You must have [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www
 You can install gem dependencies with bundler:
 
     $ gem install bundler
-    $ bundle install --without travis
+    $ bundle config set without 'travis'
+    $ bundle install
 
 ## Generating the Documentation
 

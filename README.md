@@ -5,8 +5,8 @@
 [![License](https://img.shields.io/github/license/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](#license-and-author)
 
 [![Cookbook Version](https://img.shields.io/cookbook/v/ssh_authorized_keys.svg?style=flat)](https://supermarket.chef.io/cookbooks/ssh_authorized_keys)
-[![Dependency Status](http://img.shields.io/gemnasium/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://gemnasium.com/zuazo/ssh_authorized_keys-cookbook)
-[![Code Climate](https://img.shields.io/codeclimate/github/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://codeclimate.com/github/zuazo/ssh_authorized_keys-cookbook)
+[![Dependency Status](https://img.shields.io/librariesio/github/zuazo/ssh_authorized_keys-cookbook)](https://libraries.io/github/zuazo/ssh_authorized_keys-cookbook#dependencies)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/zuazo/ssh_authorized_keys-cookbook)](https://codeclimate.com/github/onddo/ssh_authorized_keys-cookbook)
 [![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
 [![Coverage Status](https://img.shields.io/coveralls/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](https://coveralls.io/r/zuazo/ssh_authorized_keys-cookbook?branch=master)
 [![Inline docs](https://inch-ci.org/github/zuazo/ssh_authorized_keys-cookbook.svg?branch=master&style=flat)](https://inch-ci.org/github/zuazo/ssh_authorized_keys-cookbook)
@@ -28,6 +28,7 @@ This cookbook has been tested on the following platforms:
 * Fedora
 * FreeBSD
 * openSUSE
+* Oracle
 * RedHat
 * SUSE
 * Ubuntu
@@ -36,8 +37,8 @@ Please, [let us know](https://github.com/zuazo/ssh_authorized_keys-cookbook/issu
 
 ### Required Applications
 
-* Chef `12` or higher.
-* Ruby `2.3` or higher.
+* Chef `14` or higher.
+* Ruby `2.5` or higher.
 
 ## Definitions
 
@@ -196,6 +197,8 @@ See [TODO.md](https://github.com/zuazo/ssh_authorized_keys-cookbook/blob/master/
 | **Contributor:**     | [Ong Ming Yang](https://github.com/ongmingyang)
 | **Contributor:**     | [MVNW](https://github.com/MVNW)
 | **Contributor:**     | [Anthony Caiafa](https://github.com/acaiafa)
+| **Contributor:**     | [Benjamin M. Hughes](https://github.com/bmhughes)
+| **Contributor:**     | [Corey Hemminger](https://github.com/Stromweld)
 | **Copyright:**       | Copyright (c) 2015-2016, Xabier de Zuazo
 | **Copyright:**       | Copyright (c) 2015, Onddo Labs, SL.
 | **License:**         | Apache License, Version 2.0
