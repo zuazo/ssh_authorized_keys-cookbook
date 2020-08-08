@@ -13,9 +13,10 @@ env:
   matrix:
     - TESTS="style unit" CHEF_VERSION="~> 14.0" CHEF_LICENSE=accept
     - TESTS="style unit" CHEF_VERSION="~> 15.0" CHEF_LICENSE=accept
+    - TESTS="style unit" CHEF_VERSION="~> 16.0" CHEF_LICENSE=accept
 
 before_install:
-- chef --version &> /dev/null || curl -L https://www.getchef.com/chef/install.sh | sudo bash -s -- -P chefdk -v 4.3.13
+- chef --version &> /dev/null || curl -L https://www.getchef.com/chef/install.sh | sudo bash -s -- -P chefdk -v 4.10.0
 - eval "$(/opt/chefdk/bin/chef shell-init bash)"
 
 install:
