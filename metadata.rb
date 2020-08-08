@@ -30,7 +30,7 @@ version '0.5.0' # WiP
 source_url "https://github.com/zuazo/#{name}-cookbook"
 issues_url "https://github.com/zuazo/#{name}-cookbook/issues"
 
-chef_version '>= 12'
+chef_version '>= 14'
 
 supports 'aix'
 supports 'amazon'
