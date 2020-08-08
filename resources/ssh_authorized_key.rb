@@ -1,7 +1,9 @@
 # encoding: UTF-8
 #
 # Cookbook:: ssh_authorized_keys
-# Resource:: key
+# Resource:: ssh_authorize_key
+# Author:: Ben Hughes
+# Author:: Corey Hemminger
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
 # Copyright:: Copyright (c) 2015 Onddo Labs, SL.
 # License:: Apache License, Version 2.0
@@ -19,27 +21,50 @@
 # limitations under the License.
 #
 
+provides :ssh_authorize_key
 resource_name :ssh_authorize_key
 default_action :create
 
-property :instance_name, String, name_property: true
-property :user, [Integer, String]
-property :group, [Integer, String]
-property :home, String
-property :key, String
-property :keytype, String, default: 'ssh-rsa'
-property :comment, String
-property :options, Hash
-property :validate_key, [true, false], default: true
+description 'Manages ssh keys in users authorized_keys file'
 
-include SshAuthorizedKeysCookbook::TemplateHelpers
-include SshAuthorizedKeysCookbook::ResourceHelpers
+property :instance_name, String,
+         name_property: true,
+         description: 'Resource name'
+
+property :user, [Integer, String],
+         required: true,
+         description: 'System user **(required)**'
+
+property :group, [Integer, String],
+         description: 'System group'
+
+property :home, String,
+         description: 'System user home path'
+
+property :key, String,
+         required: true,
+         description: 'SSH public key in base64 **(required)**'
+
+property :keytype, String,
+         default: 'ssh-rsa',
+         description: 'SSH key type'
+
+property :comment, String,
+         name_property: true,
+         description: 'SSH key comment'
+
+property :options, Hash,
+         description: 'SSH key options as a hash'
+
+property :validate_key, [true, false],
+         default: true,
+         description: 'Enable/Disable assert_key'
 
 action :create do
+  assert_user(new_resource.user)
   new_resource.comment ||= new_resource.instance_name
   new_resource.group ||= user_group(new_resource.user)
   new_resource.home ||= user_home(new_resource.user)
-  assert_user(new_resource.user)
 
   ssh_key = {
     options: new_resource.options,
@@ -65,6 +90,8 @@ action :create do
     mode '00700'
   end
 
+  # Accumulator Pattern:
+  # https://blog.dnsimple.com/2017/10/chef-accumulators/
   with_run_context :root do
     edit_resource(:template, path) do
       cookbook 'ssh_authorized_keys'
@@ -79,4 +106,14 @@ action :create do
       delayed_action :create
     end
   end
+end
+
+action :remove do
+  description 'Remove ssh keys from users authorized_keys file'
+  # TODO: Create remove logic
+end
+
+action_class do
+  include SshAuthorizedKeysCookbook::TemplateHelpers
+  include SshAuthorizedKeysCookbook::ResourceHelpers
 end
