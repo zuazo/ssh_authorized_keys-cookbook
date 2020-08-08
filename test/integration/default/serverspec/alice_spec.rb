@@ -36,7 +36,7 @@ content = [
   'noo+OcuW6Moi0vpNiUGy2VnM0nyecLoQxggvnj1392uoMdS4VY71PGdcBac7p9IwAwYxlsuFEKR'\
   'cfKisJAHDEblgSFyC9lLMMjTSxxKn8s5AaR1h+Lb3Kwibd7ikvIgYRybTbD12FtQRxuWZBVm39C'\
   'M3539gT6514IaYyYVDyIEFDyGjK2UV27ah56jMaRFGX4IIh2gH5P2XaV7As5p8RPYoWwf+pCz19'\
-  'mrPd/ alice@acme.com'
+  'mrPd/ alice@acme.com',
 ].join("\n") << "\n"
 
 describe file('/home/alice/.ssh/authorized_keys') do

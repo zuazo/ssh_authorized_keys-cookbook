@@ -16,19 +16,20 @@ group :doc do
 end
 
 group :test do
-  gem 'rake', '~> 12.0'
-  gem 'berkshelf', '~> 6.0'
+  gem 'rake', '~> 12'
+  gem 'berkshelf', '~> 7'
 end
 
 group :style do
-  gem 'foodcritic', '~> 11.1.0'
-  gem 'rubocop', '~> 0.42.0'
+  gem 'cookstyle', '~> 5.6'
+  gem 'foodcritic', '~> 16'
+  gem 'rubocop', '~> 0.72.0'
 end
 
 group :unit do
   gem 'chef', chef_version unless chef_version.nil?
-  gem 'chefspec', '~> 7.0'
-  gem 'simplecov', '~> 0.14.0'
+  gem 'chefspec', '~> 8'
+  gem 'simplecov', '~> 0.17'
   gem 'should_not', '~> 1.1'
 end
 

@@ -1,6 +1,6 @@
 # encoding: UTF-8
 #
-# Cookbook Name:: ssh_authorized_keys
+# Cookbook:: ssh_authorized_keys
 # Library:: resource_helpers
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
 # Copyright:: Copyright (c) 2015-2016 Xabier de Zuazo
@@ -39,7 +39,7 @@ module SshAuthorizedKeysCookbook
           |[A-Za-z0-9+\/]{3}=
           |[A-Za-z0-9+\/]{4}
         )$
-      }x
+      }x.freeze
     end
 
     # Asserts that the user name is correct.

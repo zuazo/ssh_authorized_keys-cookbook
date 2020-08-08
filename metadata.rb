@@ -1,6 +1,6 @@
 # encoding: UTF-8
 #
-# Cookbook Name:: ssh_authorized_keys
+# Cookbook:: ssh_authorized_keys
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
 # Copyright:: Copyright (c) 2015-2016 Xabier de Zuazo
 # Copyright:: Copyright (c) 2015 Onddo Labs, SL.
@@ -24,13 +24,13 @@ maintainer 'Xabier de Zuazo'
 maintainer_email 'xabier@zuazo.org'
 license 'Apache-2.0'
 description 'Creates SSH authorized keys files in user home directories.'
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+# long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '0.5.0' # WiP
 
 source_url "https://github.com/zuazo/#{name}-cookbook"
 issues_url "https://github.com/zuazo/#{name}-cookbook/issues"
 
-chef_version '>= 12' if respond_to?(:chef_version)
+chef_version '>= 12'
 
 supports 'aix'
 supports 'amazon'

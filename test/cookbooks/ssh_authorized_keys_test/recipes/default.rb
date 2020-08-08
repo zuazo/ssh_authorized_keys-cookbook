@@ -1,6 +1,6 @@
 # encoding: UTF-8
 #
-# Cookbook Name:: ssh_authorized_keys_test
+# Cookbook:: ssh_authorized_keys_test
 # Recipe:: default
 # Author:: Xabier de Zuazo (<xabier@zuazo.org>)
 # Copyright:: Copyright (c) 2015 Onddo Labs, SL.
@@ -33,6 +33,13 @@ key2 =
   'DEblgSFyC9lLMMjTSxxKn8s5AaR1h+Lb3Kwibd7ikvIgYRybTbD12FtQRxuWZBVm39CM3539gT6'\
   '514IaYyYVDyIEFDyGjK2UV27ah56jMaRFGX4IIh2gH5P2XaV7As5p8RPYoWwf+pCz19mrPd/'
 
+key3 =
+  'AAAAB3NzaC1yc2EAAAABJQAAAQEAmHEBrhklpHTYHVWKthuP6eUtV+60EZ+z2tLiavANwaDFbo8'\
+  '7y+aAm+pp8eDeaY/HNfKdZv75D98Ogcx4R4or2foYfpA2xuCH9oCYJi2G0VKCQgJRF98OeENtOJ'\
+  'M2ricQuWftG8LIpeosP1j/WJjh7HIIRZDz5Mvqef8tDLuAW/wYp+a+fvVDMhCcYG/DXXK8J6fpj'\
+  'aeZdQpZihCgc/r7ZpWUM58zbAqT8HzBnd9d974RvOuIzViiZ7gmCFDghURsMIbUVGK6ChoPWvAr'\
+  'A93NrkbVBBgz0JCty8z4T03K9RJSL6aLyKaW0FWG1yahy2q+zZkXLBdeyEilo8TbaT6dVw=='
+
 key2_priv = [
   '-----BEGIN RSA PRIVATE KEY-----',
   'MIIEpAIBAAKCAQEAskiym6RURgqylPzeozVQfL2S83sSm5Ktm1z0SlGpJn/Kq0kC',
@@ -60,46 +67,50 @@ key2_priv = [
   'hQ31UQKBgQCgfC3GjleXWYBVzQihvVdCToM6CGOljzXNcWhqroBhkKACwFXMTvGB',
   'Dx7Mn9rpvnJysHHaAzZVgGan3Bd1qDyDWchZXD5vERgzy84xV6oAPriuvMzOTCDD',
   'miAKI9hX5GxD4lWMFvxEsNv0KEL7O2TA7xFRPY4u5HD+pyF/oYLXgA==',
-  '-----END RSA PRIVATE KEY-----'
+  '-----END RSA PRIVATE KEY-----',
 ].join("\n")
 
+group 'bob'
+
 user 'bob' do
-  supports manage_home: true
+  manage_home true
   home '/home/bob'
+  gid 'bob'
 end
 
-group 'bob' do
-  members %w(bob)
-end
+group 'bob2'
 
 user 'bob2' do
-  supports manage_home: true
+  manage_home true
   home '/home/bob2'
+  gid 'bob2'
 end
 
-group 'bob2' do
-  members %w(bob2)
-end
+group 'alice'
 
 user 'alice' do
-  supports manage_home: true
+  manage_home true
   home '/home/alice'
-end
-
-group 'alice' do
-  members %w(alice)
+  gid 'alice'
 end
 
 ssh_authorize_key 'bob@acme.com' do
   keytype 'ssh-rsa'
   key key1
   user 'bob'
+  only_if true.to_s
 end
 
 ssh_authorize_key 'bob@home.com' do
   key key2
   comment 'bob@home.com comment'
   user 'bob'
+end
+
+ssh_authorize_key 'bob@home3.com' do
+  key key3
+  user 'bob'
+  not_if true.to_s
 end
 
 # bob2: Same as bob but keys in reverse order
@@ -137,4 +148,14 @@ file '/root/.ssh/key2' do
   mode '00600'
   content key2_priv
   sensitive true
+end
+
+file 'bob-subscribe-test' do
+  path '/home/bob/bob-subscribe-test.txt'
+  mode '00600'
+  owner 'bob'
+  group 'bob'
+  content "Test file for subscribe to ssh_authorize_key 'bob@acme.com'."
+  action :nothing
+  subscribes :create, 'template[/home/bob/.ssh/authorized_keys]', :immediately
 end

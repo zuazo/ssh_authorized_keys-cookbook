@@ -1,5 +1,5 @@
-SSH Authorized Keys Cookbook
-============================
+# SSH Authorized Keys Cookbook
+
 [![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg?style=flat)](http://www.rubydoc.info/github/zuazo/ssh_authorized_keys-cookbook)
 [![GitHub](http://img.shields.io/badge/github-zuazo/ssh__authorized__keys--cookbook-blue.svg?style=flat)](https://github.com/zuazo/ssh_authorized_keys-cookbook)
 [![License](https://img.shields.io/github/license/zuazo/ssh_authorized_keys-cookbook.svg?style=flat)](#license-and-author)
@@ -15,10 +15,9 @@ SSH Authorized Keys Cookbook
 
 Tries to avoid generating a corrupt file that could render your server inaccessible.
 
-Requirements
-============
+## Requirements
 
-## Supported Platforms
+### Supported Platforms
 
 This cookbook has been tested on the following platforms:
 
@@ -35,21 +34,20 @@ This cookbook has been tested on the following platforms:
 
 Please, [let us know](https://github.com/zuazo/ssh_authorized_keys-cookbook/issues/new?title=I%20have%20used%20it%20successfully%20on%20...) if you use it successfully on any other platform.
 
-## Required Applications
+### Required Applications
 
 * Chef `12` or higher.
 * Ruby `2.3` or higher.
 
-Definitions
-===========
+## Definitions
 
-## ssh_authorize_key
+### ssh_authorize_key
 
 Authorize a key for public key authentication using SSH.
 
 **Warning:** This definition uses the [Accumulator Pattern](http://docs.chef.io/definitions.html#many-recipes-one-definition). This implies that any SSH key added using other methods (such as **keys added by hand**) will be **deleted**.
 
-## ssh_authorize_key Properties
+### ssh_authorize_key Properties
 
 | Property     | Default           | Description                              |
 |:-------------|:------------------|:-----------------------------------------|
@@ -62,8 +60,7 @@ Authorize a key for public key authentication using SSH.
 | options      | `nil`             | SSH key options as a hash.               |
 | validate_key | `true`            | Enable/Disable assert_key                |
 
-Usage Examples
-==============
+## Usage Examples
 
 First of all, don't forget to include the `ssh_authorized_keys` cookbook as a dependency in the cookbook metadata:
 
@@ -90,7 +87,7 @@ ssh_authorize_key 'alice@acme.com' do
 end
 ```
 
-## Setting the SSH Key Options Field
+### Setting the SSH Key Options Field
 
 You can set the options field as follows:
 
@@ -110,7 +107,7 @@ ssh_authorize_key 'bob@acme.com' do
 end
 ```
 
-## Reading the Keys from a Data Bag
+### Reading the Keys from a Data Bag
 
 For example, from the following data bag item:
 
@@ -144,8 +141,8 @@ end
 
 See [the data bags DSL documentation](http://docs.chef.io/data_bags.html#load-with-dsl-recipe) for a more detailed explanation and [the data bags knife documentation](http://docs.chef.io/data_bags.html#using-knife-title) to learn how to create a data bag.
 
-Attributes
-==========
+## Attributes
+
 
 These attributes are primarily intended to support the different platforms. Do not touch them unless you know what you are doing.
 
@@ -153,8 +150,8 @@ These attributes are primarily intended to support the different platforms. Do n
 |:------------------------------------------|:-------------|:-----------------------|
 | `node['ssh_authorized_keys']['keytypes']` | *calculated* | Allowed SSH key types. |
 
-Testing
-=======
+## Testing
+
 
 See [TESTING.md](https://github.com/zuazo/ssh_authorized_keys-cookbook/blob/master/TESTING.md).
 
@@ -177,21 +174,20 @@ it 'creates ~bob/.ssh/authorized_keys file' do
 end
 ```
 
-Contributing
-============
+## Contributing
+
 
 Please do not hesitate to [open an issue](https://github.com/zuazo/ssh_authorized_keys-cookbook/issues/new) with any questions or problems.
 
 See [CONTRIBUTING.md](https://github.com/zuazo/ssh_authorized_keys-cookbook/blob/master/CONTRIBUTING.md).
 
-TODO
-====
+## TODO
+
 
 See [TODO.md](https://github.com/zuazo/ssh_authorized_keys-cookbook/blob/master/TODO.md).
 
 
-License and Author
-=====================
+## License and Author
 
 |                      |                                          |
 |:---------------------|:-----------------------------------------|
@@ -207,9 +203,9 @@ License and Author
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-    
+
         http://www.apache.org/licenses/LICENSE-2.0
-    
+
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.

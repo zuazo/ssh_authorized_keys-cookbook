@@ -1,4 +1,5 @@
-rvm: 2.3
+language: ruby
+rvm: 2.5
 
 sudo: required
 
@@ -6,13 +7,15 @@ cache: bundler
 
 services: docker
 
+dist: bionic
+
 env:
   matrix:
-  - TESTS="style unit" CHEF_VERSION="~> 12.0"
-  - TESTS="style unit" CHEF_VERSION="~> 13.0"
+    - TESTS="style unit" CHEF_VERSION="~> 14.0" CHEF_LICENSE=accept
+    - TESTS="style unit" CHEF_VERSION="~> 15.0" CHEF_LICENSE=accept
 
 before_install:
-- chef --version &> /dev/null || curl -L https://www.getchef.com/chef/install.sh | sudo bash -s -- -P chefdk -v 1.3.43
+- chef --version &> /dev/null || curl -L https://www.getchef.com/chef/install.sh | sudo bash -s -- -P chefdk -v 4.3.13
 - eval "$(/opt/chefdk/bin/chef shell-init bash)"
 
 install:
