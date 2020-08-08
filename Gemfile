@@ -16,50 +16,49 @@ group :doc do
 end
 
 group :test do
-  gem 'rake', '~> 12'
-  gem 'berkshelf', '~> 7'
+  gem 'rake', '~> 13.0'
+  gem 'berkshelf', '~> 7.0'
 end
 
 group :style do
-  gem 'cookstyle', '~> 5.6'
-  gem 'foodcritic', '~> 16'
-  gem 'rubocop', '~> 0.72.0'
+  gem 'cookstyle', '~> 6.14'
+  gem 'foodcritic', '~> 16.3'
+  gem 'rubocop', '~> 0.88.0'
 end
 
 group :unit do
   gem 'chef', chef_version unless chef_version.nil?
-  gem 'chefspec', '~> 8'
-  gem 'simplecov', '~> 0.17'
+  gem 'chefspec', '~> 9.2'
+  gem 'simplecov', '~> 0.9'
   gem 'should_not', '~> 1.1'
 end
 
 group :integration do
-  gem 'test-kitchen', '~> 1.13'
+  gem 'test-kitchen', '~> 2.5'
 end
 
 group :integration_docker do
-  gem 'kitchen-docker', '~> 2.3'
+  gem 'kitchen-docker', '~> 2.10'
 end
 
 group :integration_vagrant do
   gem 'vagrant-wrapper', '~> 2.0'
-  gem 'kitchen-vagrant', '~> 1.0'
+  gem 'kitchen-vagrant', '~> 1.7'
 end
 
 group :integration_cloud do
-  gem 'kitchen-ec2', '~> 1.2'
-  gem 'kitchen-digitalocean', '~> 0.9.5'
+  gem 'kitchen-ec2', '~> 3.7'
+  gem 'kitchen-digitalocean', '~> 0.11'
 end
 
 group :guard do
-  gem 'guard', '~> 2.14'
+  gem 'guard', '~> 2.16'
   gem 'guard-foodcritic', '~> 3.0'
-  gem 'guard-rubocop', '~> 1.1'
-  gem 'guard-rspec', '~> 4.3'
-  # Temporary disabled: Error is: cannot load such file -- guard/kitchen
-  # gem 'guard-kitchen', '~> 0.0'
+  gem 'guard-rubocop', '~> 1.3'
+  gem 'guard-rspec', '~> 4.7'
+  gem 'guard-kitchen', '~> 0.1'
 end
 
 group :travis do
-  gem 'coveralls', '~> 0.7', require: false
+  gem 'coveralls', '~> 0.8', require: false
 end
