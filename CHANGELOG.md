@@ -5,7 +5,17 @@ All notable changes to the [`ssh_authorized_keys`](https://supermarket.chef.io/c
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-- ...
+
+### Added
+- Chef 16 support (issues [#15](https://github.com/zuazo/ssh_authorized_keys-cookbook/pull/15) and [#16](https://github.com/zuazo/ssh_authorized_keys-cookbook/pull/16), thanks [Benjamin M. Hughes](https://github.com/bmhughes) and [Corey Hemminger](https://github.com/Stromweld)).
+- Included Oracle support.
+
+### Removed
+- Drop Ruby `< 2.5` support.
+- Drop Chef `< 14` support.
+
+### Documentation Changes
+- README: Fix broken badges
 
 ## [0.4.0] - 2017-06-12
 [![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook/0.4.0.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
