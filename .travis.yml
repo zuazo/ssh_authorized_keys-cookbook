@@ -1,16 +1,12 @@
 language: ruby
 rvm: 2.5
-
-sudo: required
-
 cache: bundler
-
 services: docker
-
+os: linux
 dist: bionic
 
 env:
-  matrix:
+  jobs:
     - TESTS="style unit" CHEF_VERSION="~> 14.0" CHEF_LICENSE=accept
     - TESTS="style unit" CHEF_VERSION="~> 15.0" CHEF_LICENSE=accept
     - TESTS="style unit" CHEF_VERSION="~> 16.0" CHEF_LICENSE=accept
