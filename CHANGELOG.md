@@ -4,6 +4,9 @@ All notable changes to the [`ssh_authorized_keys`](https://supermarket.chef.io/c
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+- ...
+
 ## [1.0.0] - 2020-08-09
 [![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook/1.0.0.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
 
