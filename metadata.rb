@@ -25,7 +25,7 @@ maintainer_email 'xabier@zuazo.org'
 license 'Apache-2.0'
 description 'Creates SSH authorized keys files in user home directories.'
 # long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.5.0' # WiP
+version '1.0.0'
 
 source_url "https://github.com/zuazo/#{name}-cookbook"
 issues_url "https://github.com/zuazo/#{name}-cookbook/issues"

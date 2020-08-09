@@ -4,7 +4,8 @@ All notable changes to the [`ssh_authorized_keys`](https://supermarket.chef.io/c
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [1.0.0] - 2020-08-09
+[![Build Status](https://img.shields.io/travis/zuazo/ssh_authorized_keys-cookbook/1.0.0.svg?style=flat)](https://travis-ci.org/zuazo/ssh_authorized_keys-cookbook)
 
 ### Added
 - Chef 16 support (issues [#15](https://github.com/zuazo/ssh_authorized_keys-cookbook/pull/15) and [#16](https://github.com/zuazo/ssh_authorized_keys-cookbook/pull/16), thanks [Benjamin M. Hughes](https://github.com/bmhughes) and [Corey Hemminger](https://github.com/Stromweld)).
@@ -60,7 +61,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Initial release of `ssh_authorized_keys`.
 
-[Unreleased]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.4.0...HEAD
+[Unreleased]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.4.0...1.0.0
 [0.4.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/zuazo/ssh_authorized_keys-cookbook/compare/0.1.0...0.2.0
