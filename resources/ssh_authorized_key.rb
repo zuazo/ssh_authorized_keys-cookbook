@@ -21,7 +21,8 @@
 # limitations under the License.
 #
 
-provides ssh_authorize_key
+unified_mode true
+provides :ssh_authorize_key
 resource_name :ssh_authorize_key
 default_action :create
 
